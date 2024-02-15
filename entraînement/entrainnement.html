@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .day_entrainnement{
+            width: 45em;
+            height: 35em;
+            background-color: aqua;
+            margin-left: 22em;
+            border-radius: 30px;
+            box-shadow: 0px 28px 20px 1px black;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-bottom: 4em;
+        }
+        .right_exercice{
+            position: absolute;
+            top: 32em;
+            left: 62em;
+            width: 3em;
+            height: 3em;
+            padding: 10px 0px;
+            box-shadow: -3px 2px 2px 2px ;
+            border: 0.1px solid rgb(47, 187, 197);
+            background-color: rgb(0, 255, 55);
+        }
+        .left_exercice{
+            position: absolute;
+            top: 32em;
+            left: 25em;
+            width: 3em;
+            height: 3em;
+            padding: 10px 0px;
+            box-shadow: 3px 2px 2px 2px ;
+            border: 0.1px solid rgb(47, 187, 197);
+            background-color: red;
+            
+        }
+        img{
+            width: 4em;
+            height: 4em;
+        }
+        .exercice{
+            width: 44em;
+            height: 21em;
+        }
+        video{
+            width: 42em;
+            height: 21em;
+            margin: 1em;
+        }
+        .left_exercice:hover,.right_exercice:hover{
+            transform: scale(1.1);
+        }
+        .title{
+            position: absolute;
+            bottom: 17em;
+            left: 20em;
+            font-size: xx-large;
+        }
+        @media (max-width:720px){
+            .day_entrainnement{
+            width: 43em;
+            height: 90em;
+            margin-left: 0.5em;
+
+        }
+        .right_exercice{
+            position: absolute;
+            top: 75em;
+            left: 29em;
+            width: 8em;
+            height: 8em;
+        }
+        .left_exercice{
+            position: absolute;
+            top: 75em;
+            left: 9em;
+            width: 8em;
+            height: 8em;
+        }
+        img{
+            width: 7em;
+            height: 7em;
+        }
+        .exercice{
+            width: 50em;
+            height: 41em;
+            margin: 1em;
+        }
+        video{
+            width: 38.9em;
+            height: 30em;
+            margin: 1em;
+        }
+        .title{
+            position: absolute;
+            bottom: 40em;
+            left: 9.5em;
+            font-size: xx-large;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="day_entrainnement" id="exercices">
+        <h1 class="title" id="title"></h1>
+        <div class="left_exercice" id="left_exercice" onclick="previous_entrainnement()"><img src="fleche_left.png" alt=""></div>
+        <div class="right_exercice" id="right_exercice" onclick="next_entrainnement()"><img src="fleche_right.png" alt=""></div>
+    </div>
+    <script>
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        const container_exercice=document.getElementById("exercices")
+        const left_exercice=document.getElementById("left_exercice")
+        const right_exercice=document.getElementById("right_exercice")
+        function next_entrainnement(){
+            if(w<=720 && h<=1600){
+                container_exercice.scrollBy(685,200)
+            }else{
+            container_exercice.scrollBy(685,0)}
+        }//                             703
+        function previous_entrainnement(){
+            if(w<=720 && h<=1600){
+                container_exercice.scrollBy(-685,0)
+            }else{
+            container_exercice.scrollBy(-685,0)}
+        }
+        const liste_entrainnement={
+            pectoraux:[
+                "ex_pectoraux1.mp4","ex_pectoraux2.mp4","ex_pectoraux3.mp4"
+                ],
+            back:[
+                "ex_back1.mp4","ex_back2.mp4","ex_back3.mp4","ex_back4.mp4","ex_back5.mp4"
+                ],
+            shoulder:[
+                "ex_shoulder1.mp4","ex_shoulder2.mp4","ex_shoulder3.mp4","ex_shoulder4.mp4","ex_shoulder5.mp4"
+                ],
+            abdominaux:[
+                "ex_abdominaux1.mp4","ex_abdominaux2.mp4","ex_abdominaux3.mp4","ex_abdominaux4.mp4","ex_abdominaux5.mp4","ex_abdominaux6.mp4","ex_abdominaux7.mp4"
+                ],
+            legs:[
+                "ex_legs1.mp4","ex_legs2.mp4","ex_legs3.mp4","ex_legs4.mp4"
+                ],
+            arms:[
+                "ex_arms1.mp4","ex_arms2.mp4","ex_arms3.mp4","ex_arms4.mp4","ex_arms5.mp4","ex_arms6.mp4"
+                ],
+            planche:[
+                "ex_planche1.mp4","ex_planche2.mp4","ex_planche3.mp4","ex_planche4.mp4","ex_planche5.mp4"
+                ],
+            allBody:[
+                "1.mp4","2.1.mp4","2.2.mp4","3.1.mp4","3.2.mp4","4.1.mp4","4.2.mp4","5.1.mp4","5.2.mp4","6.1.mp4","6.2.mp4","7.mp4"
+                ]
+        }
+
+        class day_entrainnement{
+        entrainnement(entrainnement){
+            let title=document.getElementById("title").innerHTML=entrainnement
+            liste_entrainnement[entrainnement].forEach(element => {
+                let div=document.createElement("div");
+                let exercice=document.createElement("video");
+                exercice.src=entrainnement+"/"+element;
+                exercice.controls=true;
+                div.className="exercice";
+                div.appendChild(exercice);
+                container_exercice.appendChild(div);
+            });
+        }
+        search_entrainnement(){
+            if(location.hash=='#pectoraux'){
+                this.entrainnement("pectoraux")
+            }
+            if(location.hash=='#back'){
+                this.entrainnement("back")
+            }
+            if(location.hash=='#shoulder'){
+                this.entrainnement("shoulder")
+            }
+            if(location.hash=='#abdominaux'){
+                this.entrainnement("abdominaux")
+            }
+            if(location.hash=='#legs'){
+                this.entrainnement("legs")
+            }
+            if(location.hash=='#arms'){
+                this.entrainnement("arms")
+            }
+            if(location.hash=='#planche'){
+                this.entrainnement("planche")
+            }
+            if(location.hash=='#allBody'){
+                this.entrainnement("allBody")
+            }
+        }}
+        const a=new day_entrainnement();
+        a.search_entrainnement()
+    </script>
+</body>
+</html>

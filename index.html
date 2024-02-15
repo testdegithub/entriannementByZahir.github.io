@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahir</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0em 0em 2em 2em;
+            justify-content: center;
+        }
+        .option{
+            width: 16.1em;
+            height: 14.1em;
+            margin: 0.5em 2em 2em 2em;
+            background-color: red;
+            box-shadow: 0px 28px 20px 1px black;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border: solid rgb(0, 255, 4) 2px;
+            transition-duration: 3s;
+            text-align: center;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .option:hover,button:hover{
+            transform: scale(1.1);
+        }
+        h2{
+            justify-content: center;
+            box-shadow: 2px 3px 20px 2px green;
+            width: 11.5em;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        img{
+            width: 16.1em;
+            height: 11.55em;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 28px;
+        }
+        h4{
+            margin: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .infos button{
+            height: 4em;
+            width: 10em;
+            background-color: aqua;
+            border-radius: 20px;
+            font-family: fantasy;
+            transition-duration: 3s;
+        }
+        section,header{
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width:720px){
+            .option{
+            height: 15.1em;
+            margin: 4em 2em 2em 2em;
+        }
+        img{
+            height: 12.55em;
+        }
+        section{
+            margin-top: 2em;
+        }
+        }
+        @media (max-width:1000px){
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="title">choose your day's training</h2>
+    </header>
+        <div class="container">
+            <div class='option'>
+                <h4>All Body</h4>
+                <a href="entraînement/entrainnement.html#allBody">
+                    <img src="allBody.webp" alt="">
+                </a>
+            </div>
+            <div class='option'>
+                <h4>pectoraux</h4>
+                <a href="entraînement/entrainnement.html#pectoraux">
+                    <img src="pectoraux.webp" alt="">
+                </a>
+            </div>
+            <div class='option'>
+                <h4>back</h4>
+                <a href="entraînement/entrainnement.html#back">
+                    <img src="back.webp" alt="">
+                </a>
+            </div>
+            <div class='option'>
+                <h4>shoulder</h4>
+                <a href="entraînement/entrainnement.html#shoulder">
+                    <img src="shouldre.jpg" alt="">
+                </a>
+            </div>
+            <div class='option'>
+                <h4>abdominaux</h4>
+                <a href="entraînement/entrainnement.html#abdominaux">
+                    <img src="abs.jpg" alt="">
+                </a>
+            </div>
+            <div class='option'>
+                <h4>legs</h4>
+                <a href="entraînement/entrainnement.html#legs">
+                    <img src="legs.jpg" alt="">
+                </a>
+            </div>
+            <div class='option'>
+                <h4>arms</h4>
+                <a href="entraînement/entrainnement.html#arms">
+                    <img src="arms.webp" alt="">
+                </a>
+            </div>
+            <div class='option'>
+                <h4>Planche</h4>
+                <a href="entraînement/entrainnement.html#planche">
+                    <img src="planche.jpg" alt="">
+                </a>
+            </div>
+    </div>
+</body>
+</html>
